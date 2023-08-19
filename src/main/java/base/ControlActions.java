@@ -266,6 +266,11 @@ public abstract class ControlActions {
 			e.printStackTrace();
 		}
 	}
+	
+	public static byte[] takeScreenShot() {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		return ts.getScreenshotAs(OutputType.BYTES);
+	}
 
 	protected int getListOfElementCount(List<WebElement> e) {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
